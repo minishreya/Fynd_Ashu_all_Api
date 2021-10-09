@@ -1,0 +1,137 @@
+// MOngo Db ---- Mongo db is a no relational/ no sql database
+
+
+SQL - structured query language 
+
+to use mongo db what is the benefit we need not learn any query language 
+
+for example 
+
+Slect * from table name where email =] "Ashu.lekhi"
+Insert "ashu" 22324 ashulekhi@fynd.acedemy trainer into employees(name, id , email , role)
+
+
+Mongo db does not follow and query langugae so thats why we call it as NO SQL database 
+
+Then what do mongo db use 
+
+MOngo db uses objects to stored in itself 
+
+
+From  CLient/froentends Api receive json()
+The json received from clients/froentends can be directly stores into mongodb without any other overhead 
+
+
+MOngodb by default do  not have any schema /strucure that means if any record is having 4 fields that can be stored into db and with 40 fields acan also be store into db 
+
+
+
+Lets understand Architecture 
+MONGOD Server -   list of databses 
+
+mmt  - makemytrip --- hotels , flights , trains , busses , packages etcetc 
+
+these can be considered as collections 
+
+in sql database grouing of records is known as tables 
+in mongodb we call group of records as collections 
+
+Examples ashudb is the name of database 
+it can have various collections 
+users
+products
+orders
+cartitems
+attendance 
+
+In Collections what do store we store records those records in terms of mongodb is known as document 
+
+that document is nothing but objects
+
+
+
+TO select the database in which u want to were the command is use dbname 
+
+example use fyndnodedb or use fynddb or use fynddbnodeaug anythings
+
+
+CATCH : If that database is not there , it will be created on the fly
+
+show dbs
+use dbname 
+show collections
+
+
+NOw we will perform operations on data 
+and data is stored in collections
+
+
+4 types of operations can be performed on collections
+
+Create Retrieve Update Delete
+
+
+CRUD operations 
+
+Syntax is common for every operation 
+db.collectionname.operation 
+db.users.insert()
+db.users.find()
+db.users.update()
+db.users.delete()
+
+
+
+To prepare the structure of the docuemt hwta is ur query and pass it into find function()
+
+
+{location:"Pune"}
+
+mongodb package  -- when we just want to store without any limitations 
+mongoose  -- when we want to provide any contraints 
+
+mongodb pacakge vs mongoose package 
+
+contraints means rules or schema 
+
+ruless can email shoud not be duplicate -- is an example of contraint 
+another constraint cant age must be greater 18 another can be noumber must be of 10 digtis 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Api >>>>>>>>>>>>>>>>>>>>>>
+
+
+We will keep our server clean 
+and we will hire aditya for handling routes Humari comapy's ceo is Aditya 
+
+Routes
+
+
+
+Node js api is ready ?
+
+Address of api which we created is  == localhost:9000/user/register 
+
+2) to retreive the data 
+
+
+those functions which handles routes are placed in a file controller 
+
+
+
+for every collections we will have one model . that model will be responsible for crud on that collection 
+
+users collection usermodel
+products collection productmodel
+
+first thing we tell to this model is that what type of data is allowed to be stored inside that collection.. this process is schema designing 
+
+
+
+Request reaches to server. From Server it reaches to routes . From routes it reaches to appropriate/required  index.js 
+
+
+From required index.js it will go to matched routepath.. Reoute path will decide which handler function from the controller will handle the request
+
+for example /user/register is mapped to a function mentioned into controller which will handle request for  /user/regiser routepath
+
+there are some functions which contains business logic  for example adding a new user into database 
